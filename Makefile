@@ -44,10 +44,25 @@
 # NOCDDL
 
 CC=g++
-CFLAGS=-Wall -g -O3
-PEAdapterFinder: main.o Input.o CS.o NW.o
+CFLAGS=-O3 -g -Wall
 
-clean:
-	rm -f PEAdapterFinder main.o Input.o CS.o NW.o
+all:PEAdapterFinder
+PEAdapterFinder: main.cpp Input.cpp CS.cpp NW.h Input.h NW.h CS.h
+		$(CC) $(CFLAGS) main.cpp Input.cpp NW.cpp CS.cpp -o $@ -lz -lm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
